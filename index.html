@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pharmacy Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="fade-in">
+
+<header>
+  <h2>💊 Pharmacy Management System</h2>
+  <button onclick="logout()" class="logout-btn">Logout</button>
+</header>
+
+<div class="container">
+
+  <!-- Add Medicine -->
+  <div class="card">
+    <h3>Add Medicine</h3>
+    <input type="text" id="name" placeholder="Medicine Name">
+    <input type="number" id="price" placeholder="Price">
+    <input type="number" id="quantity" placeholder="Quantity">
+    <button onclick="addMedicine()">Add / Update</button>
+  </div>
+
+  <!-- Search -->
+  <div class="card">
+    <h3>Search Medicine</h3>
+    <input type="text" id="search" placeholder="Search..." onkeyup="searchMedicine()">
+  </div>
+
+  <!-- Table -->
+  <div class="card">
+    <h3>Medicine List</h3>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Quantity</th>
+          <th>Action</th>
+        </tr>
+      </thead>
+      <tbody id="tableBody"></tbody>
+    </table>
+  </div>
+
+  <!-- 📊 Chart (IMPORTANT: container kulla irukanum) -->
+  <div class="card">
+    <h3>Stock Overview</h3>
+    <canvas id="chart"></canvas>
+  </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

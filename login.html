@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pharmacy Login</title>
+  <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+
+<div class="login-box">
+  <h2>Pharmacy Login 💊</h2>
+
+  <div class="input-box">
+    <input id="user" placeholder="Username">
+  </div>
+
+  <div class="input-box">
+    <input id="pass" type="password" placeholder="Password">
+  </div>
+
+  <button onclick="login()">Login</button>
+
+<div id="loader" style="display:none; margin-top:15px;">
+  <div class="spinner"></div>
+  <p>Loading...</p>
+</div>
+
+
+  <div class="footer">
+    Hospital Management System
+  </div>
+</div>
+
+<script>
+function login(){
+  let u = document.getElementById("user").value;
+  let p = document.getElementById("pass").value;
+
+  if(u === "admin" && p === "1234"){
+
+    document.querySelector("button").style.display = "none";
+    document.getElementById("loader").style.display = "block";
+
+    // fade out animation
+    document.body.classList.add("fade-out");
+
+    setTimeout(() => {
+      window.location = "index.html";
+    }, 2000);
+
+  } else {
+    alert("Wrong Username or Password!");
+  }
+}
+
+
+
+</script>
+
+</body>
+</html>
